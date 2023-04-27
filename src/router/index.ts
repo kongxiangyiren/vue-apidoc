@@ -17,6 +17,15 @@ const router = createRouter({
       path: '/interface',
       name: 'interface',
       component: () => import('@/views/InterfaceView.vue')
+    },
+    {
+      path: '/404',
+      name: 'err',
+      component: () => import('@/views/ErrorView.vue')
+    },
+    {
+      path: '/:pathMatch(.*)',
+      redirect: '/404'
     }
   ]
 });

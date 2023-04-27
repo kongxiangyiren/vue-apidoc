@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 import importToCDN from 'vite-plugin-cdn-import';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import viteCompression from 'vite-plugin-compression';
 
 // https://vitejs.dev/config/
 export default defineConfig(mode => {
@@ -73,6 +74,19 @@ export default defineConfig(mode => {
                 : undefined
           }
         }
+      }),
+      viteCompression({
+        disable: false, // 是否禁用 false:启用 ture:禁用
+        verbose: false, // 是否在控制台输出压缩结果
+        filter: /.(js|css|md|json)$/i, // 压缩文件的过滤规则
+        threshold: 100, // 文件大小阈值，以字节为单位
+        algorithm: 'gzip', // 压缩算法,可选 [ 'gzip' , 'brotliCompress' ,'deflate' , 'deflateRaw']
+        ext: '.gz', // 	生成的压缩包后缀
+        compressionOptions: {
+          // 压缩选项
+          level: 9 // 压缩等级，范围1-9,越小压缩效果越差，但是越大处理越慢，所以一般取中间值;
+        },
+        deleteOriginFile: true // 是否删除原始文件
       })
     ],
     resolve: {
@@ -90,13 +104,13 @@ export default defineConfig(mode => {
 
       // 静态文件管理,assetsDir和rollupOptions二选一
       // assetsDir:"assets",
-      rollupOptions: {
-        output: {
-          chunkFileNames: 'assets/js/[name]-[hash].js',
-          entryFileNames: 'assets/js/[name]-[hash].js',
-          assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
-        }
-      },
+      // rollupOptions: {
+      //   output: {
+      //     chunkFileNames: 'assets/js/[name]-[hash].js',
+      //     entryFileNames: 'assets/js/[name]-[hash].js',
+      //     assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
+      //   }
+      // },
 
       // 移除log
       minify: 'terser',
