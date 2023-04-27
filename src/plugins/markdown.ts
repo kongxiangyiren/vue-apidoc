@@ -1,9 +1,18 @@
-import { parse } from 'marked';
-// import hljs from 'highlight.js' // 全部语言
-import hljs from 'highlight.js/lib/common'; //通用语言
+import MarkdownIt from 'markdown-it';
 import highlightjsLineNumbers from 'highlightjs-line-numbers2.js';
 import ClipboardJS from 'clipboard';
 import '@/assets/hljs.css';
+
+// 任务列表
+import todo from 'markdown-it-todo';
+import '@/assets/todo-list.css';
+
+// Tip 提示插件
+import tips from 'markdown-it-tips';
+import '@/assets/tip.css';
+import type { HLJSApi } from 'highlight.js';
+
+const md = new MarkdownIt().use(todo).use(tips);
 
 //摘自CSDN
 /*生成复制按钮*/
@@ -49,10 +58,18 @@ export function mdParse(con: string) {
     import('github-markdown-css/github-markdown-light.css');
   }
 
-  return parse(con);
+  return md.render(con);
 }
 
-export function getHljs() {
+export async function getHljs() {
+  let hljs: HLJSApi;
+
+  if (import.meta.env.VITE_APP_CDN === 'true' && !import.meta.env.DEV) {
+    hljs = window.hljs;
+  } else {
+    hljs = (await import('highlight.js/lib/common')).default; //通用语言
+  }
+
   setTimeout(() => {
     hljs.highlightAll();
     highlightjsLineNumbers.init(hljs); //需要将 highlight.js 传入进行方法替换

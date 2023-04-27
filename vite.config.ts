@@ -35,11 +35,10 @@ export default defineConfig(mode => {
           var: 'axios',
           path: 'https://unpkg.com/axios@1.3.6/dist/axios.min.js'
         },
-        // marked
         {
-          name: 'marked',
-          var: 'marked',
-          path: 'https://unpkg.com/marked@4.3.0/lib/marked.umd.js'
+          name: 'markdown-it',
+          var: 'markdownit',
+          path: 'https://unpkg.com/markdown-it@13.0.1/dist/markdown-it.min.js'
         },
         {
           name: 'highlight.js',
@@ -69,7 +68,7 @@ export default defineConfig(mode => {
         inject: {
           data: {
             githubMarkdownCss:
-              env.VITE_APP_CDN === 'true'
+              mode.command === 'build' && env.VITE_APP_CDN === 'true'
                 ? '<link rel="stylesheet" href="https://unpkg.com/github-markdown-css@5.2.0/github-markdown-light.css">'
                 : undefined
           }
