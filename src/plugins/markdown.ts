@@ -14,12 +14,12 @@ function codecopy_func() {
   //遍历DOM（pre节点）节点
   for (let i = 0; i < codecopys.length; i++) {
     //pre元素对象
-    let codecopy = codecopys[i];
+    const codecopy = codecopys[i];
 
     // console.log(codecopy);
 
     //生成复制按钮
-    let html_temp = btn.replace(/index/g, i + '');
+    const html_temp = btn.replace(/index/g, i + '');
 
     //找到code元素，并添加id属性，id的值和复制按钮的属性 data-clipboard-target 的值是一样的
     //判断pre标签内是否含有code标签，如是则执行
@@ -28,7 +28,7 @@ function codecopy_func() {
       // @ts-ignore
       codecopy.firstChild.id = 'code_' + i;
       //将复制按钮追加至页面
-      let html = codecopy.innerHTML + html_temp;
+      const html = codecopy.innerHTML + html_temp;
 
       codecopy.innerHTML = html;
     }

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-  import Top from '@/components/top.vue';
+  import Top from '@/components/topC.vue';
   import { RouterView } from 'vue-router';
 </script>
 

@@ -11,7 +11,8 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 export default defineConfig(mode => {
   const env = loadEnv(mode.mode, process.cwd());
   let CDN;
-  if (Boolean(env.VITE_APP_CDN)) {
+
+  if (env.VITE_APP_CDN === 'true') {
     CDN = importToCDN({
       modules: [
         // vue
@@ -66,9 +67,10 @@ export default defineConfig(mode => {
          */
         inject: {
           data: {
-            githubMarkdownCss: Boolean(env.VITE_APP_CDN)
-              ? '<link rel="stylesheet" href="https://unpkg.com/github-markdown-css@5.2.0/github-markdown-light.css">'
-              : undefined
+            githubMarkdownCss:
+              env.VITE_APP_CDN === 'true'
+                ? '<link rel="stylesheet" href="https://unpkg.com/github-markdown-css@5.2.0/github-markdown-light.css">'
+                : undefined
           }
         }
       })
