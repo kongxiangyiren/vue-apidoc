@@ -1,6 +1,8 @@
 <template>
-  <div class="container rounded-md mx-auto bg-white">
-    <div class="markdown-body rounded-md p-10 lg:px-10 <sm:px-2" v-html="content" />
+  <div class="about container lg:px-10 <sm:px-2 mx-auto">
+    <div class="rounded-md bg-white">
+      <div class="markdown-body rounded-md p-10 lg:px-10 <sm:px-2" v-html="content" />
+    </div>
   </div>
 </template>
 
