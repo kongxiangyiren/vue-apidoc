@@ -1,5 +1,6 @@
 import { parse } from 'marked';
-import hljs from 'highlight.js';
+// import hljs from 'highlight.js' // 全部语言
+import hljs from 'highlight.js/lib/common'; //通用语言
 import highlightjsLineNumbers from 'highlightjs-line-numbers2.js';
 import ClipboardJS from 'clipboard';
 import '@/assets/hljs.css';
