@@ -6,5 +6,5 @@ declare module 'markdown-it-todo';
 declare module 'markdown-it-tips';
 
 interface Window {
-  hljs: any;
+  hljs: import('highlight.js').HLJSApi;
 }
