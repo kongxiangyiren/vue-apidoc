@@ -34,9 +34,9 @@ function codecopy_func() {
     //找到code元素，并添加id属性，id的值和复制按钮的属性 data-clipboard-target 的值是一样的
     //判断pre标签内是否含有code标签，如是则执行
 
-    if (codecopy.firstChild?.nodeName == 'CODE') {
-      // @ts-ignore
-      codecopy.firstChild.id = 'code_' + i;
+    if (codecopy.querySelector('code')?.nodeName == 'CODE') {
+      //  @ts-ignore
+      codecopy.querySelector('code').id = 'code_' + i;
       //将复制按钮追加至页面
       const html = codecopy.innerHTML + html_temp;
 
@@ -73,6 +73,23 @@ export async function getHljs() {
   setTimeout(() => {
     hljs.highlightAll();
     highlightjsLineNumbers.init(hljs); //需要将 highlight.js 传入进行方法替换
+
+    // 折叠代码块
+    import('@/assets/collapser.css');
+    const collapserHtml = `<div class="collapser" onclick="
+   this.classList[1] ? this.classList.remove('no-collapser') : this.classList.add('no-collapser');
+    let t=this.nextElementSibling; t.style.display==='block'?t.style.setProperty('display','none','important'):t.style.setProperty('display','block','important');
+    let x=t.nextElementSibling; x.style.display=x.style.display==='block'?'none':'block';
+    "><span class="no-triangle">▼</span><span class="triangle">▶</span> 点击展开/折叠代码</div>`;
+    const codeblocks = document.getElementsByTagName('code');
+    for (let i = 0; i < codeblocks.length; i++) {
+      const codeblock = codeblocks[i];
+      const parent = codeblock.parentElement;
+      if (parent?.nodeName === 'PRE') {
+        parent.innerHTML = collapserHtml + parent.innerHTML;
+      }
+    }
+
     codecopy_func();
     //@ts-ignore
     hljs.initLineNumbersOnLoad();

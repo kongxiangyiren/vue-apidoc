@@ -1,0 +1,44 @@
+.codecopy-btn {
+  display: none;
+  top: 40px;
+}
+
+.codecopy-btn:hover {
+  top: 39px;
+}
+
+.hljs {
+  display: none !important;
+}
+
+pre .no-collapser .no-triangle {
+  display: inline-block !important;
+}
+pre .no-collapser .triangle {
+  display: none !important;
+}
+pre .collapser .no-triangle {
+  display: none;
+}
+
+pre .collapser .triangle {
+  display: inline-block;
+  font-size: 14px;
+}
+pre .collapser .no-triangle {
+  font-size: 16px;
+}
+pre .collapser .triangle,
+pre .collapser .no-triangle {
+  width: 15px;
+}
+pre .collapser {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 100%;
+  background-color: antiquewhite;
+  user-select: none;
+  cursor: pointer;
+}
