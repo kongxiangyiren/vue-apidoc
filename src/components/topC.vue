@@ -1,6 +1,6 @@
 <template>
   <div class="top h-15 mb-8">
-    <div class="nav z-50 fixed top-0 left-0 right-0 h-15 bg-white bg-opacity-80">
+    <div class="nav z-50 fixed top-0 left-0 right-0 h-15 bg-white shadow-sm">
       <div class="container lg:px-10 <sm:px-2 mx-auto h-[100%] flex items-center justify-between">
         <div class="text-xl font-bold">
           <router-link to="/">空巷API</router-link>
