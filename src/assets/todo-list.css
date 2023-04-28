@@ -1,0 +1,36 @@
+.markdown-body li.task-list-item {
+  margin-left: -20px;
+}
+
+.markdown-body li.task-list-item .markdown-todo {
+  width: 15px;
+  height: 15px;
+  margin-top: -3px;
+  margin-right: 4px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.markdown-body li.task-list-item .markdown-todo:disabled::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: #ccc 1px solid;
+  content: ' ';
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.markdown-body li.task-list-item .markdown-todo:disabled[checked='true']::after {
+  content: '✓';
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  border-color: #3eaf7c;
+  background-color: #3eaf7c;
+}

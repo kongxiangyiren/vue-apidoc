@@ -1,0 +1,59 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f0f2f5;
+  color: #454c53;
+}
+
+html {
+  //  火狐滚动条
+  scrollbar-width: thin;
+  scrollbar-color: rgb(203, 199, 196, 1) rgba(0, 0, 0, 0);
+
+  // 谷歌滚动条
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(203, 199, 196, 1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 4px;
+  }
+
+  // 文本选中颜色
+  ::selection {
+    background-color: rgb(203, 199, 196, 1);
+    color: #fff;
+  }
+}
+
+.markdown-body {
+  table:not(.hljs-ln) {
+    td,
+    th {
+      width: 100vw;
+      text-align: center;
+      padding: 0.75rem 0.75rem !important;
+      white-space: nowrap;
+    }
+    tbody {
+      tr {
+        &:nth-of-type(2n + 1) {
+          background-color: #f0f2f5;
+        }
+        &:nth-of-type(2n) {
+          background-color: rgba($color: #000000, $alpha: 0);
+        }
+      }
+    }
+  }
+}

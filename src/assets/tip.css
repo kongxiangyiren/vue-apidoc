@@ -1,0 +1,40 @@
+.md-tip p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 16px;
+}
+
+.md-tip-warning,
+.md-tip-error,
+.md-tip-success,
+.md-tip-info,
+.md-tip-danger {
+  margin: 1rem 0;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+}
+.md-tip-success {
+  background-color: #f3f5f7;
+  border-color: #42b983;
+}
+.md-tip-warning {
+  color: #6b5900;
+  background-color: rgba(255, 229, 100, 0.3);
+  border-color: #e7c000;
+}
+
+.md-tip.warning a {
+  color: #2c3e50;
+}
+.md-tip-danger,
+.md-tip-error {
+  color: #4d0000;
+  background-color: #ffe6e6;
+  border-color: #c00;
+}
+
+.md-tip-danger a,
+.md-tip-error a {
+  color: #2c3e50;
+}
