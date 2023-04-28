@@ -2,8 +2,8 @@
   "api": [
     {
       "id": 1,
-      "api名称": "githubcalendar",
-      "api介绍": "hexo githubcalendar",
+      "api名称": "gitcalendar",
+      "api介绍": "github提交次数统计",
       "mdPath": "/md/api/githubcalendar.md"
     },
     {
@@ -17,6 +17,12 @@
       "api名称": "未来15天天气查询",
       "api介绍": "提供未来15天天气查询",
       "mdPath": "/md/api/weather.md"
+    },
+    {
+      "id": 4,
+      "api名称": "毒鸡汤",
+      "api介绍": "随机输出一条毒鸡汤",
+      "mdPath": "/md/api/djt.md"
     }
   ]
 }
