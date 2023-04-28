@@ -3,6 +3,9 @@ import highlightjsLineNumbers from 'highlightjs-line-numbers2.js';
 import ClipboardJS from 'clipboard';
 import '@/assets/hljs.css';
 
+// 路径设置
+import link from 'markdown-it-replace-link';
+
 // 任务列表
 import todo from 'markdown-it-todo';
 import '@/assets/todo-list.css';
@@ -12,7 +15,18 @@ import tips from 'markdown-it-tips';
 import '@/assets/tip.css';
 import type { HLJSApi } from 'highlight.js';
 
-const md = new MarkdownIt().use(todo).use(tips);
+const md = new MarkdownIt()
+  .use(todo)
+  .use(tips)
+  .use(link, {
+    processHTML: true, // defaults to false for backwards compatibility
+    replaceLink: function (link: string, env: any, token: any, htmlToken: any) {
+      if (link.slice(0, 4) !== 'http') {
+        return import.meta.env.BASE_URL.slice(0, import.meta.env.BASE_URL.length - 1) + link;
+      }
+      return link;
+    }
+  });
 
 //摘自CSDN
 /*生成复制按钮*/

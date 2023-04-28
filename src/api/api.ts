@@ -14,11 +14,15 @@ import jsonsql from 'jsonsql';
 // });
 
 export const getAbout = () => {
-  return axios.get('/md/about.md');
+  return axios.get(
+    import.meta.env.BASE_URL.slice(0, import.meta.env.BASE_URL.length - 1) + '/md/about.md'
+  );
 };
 
 export const apiList = () => {
-  return axios.get('/api.json');
+  return axios.get(
+    import.meta.env.BASE_URL.slice(0, import.meta.env.BASE_URL.length - 1) + '/api.json'
+  );
 };
 
 export const getInterface = async (id: number) => {
@@ -37,7 +41,7 @@ export const getInterface = async (id: number) => {
 };
 
 export const getAPI = (path: string) => {
-  return axios.get(path);
+  return axios.get(import.meta.env.BASE_URL.slice(0, import.meta.env.BASE_URL.length - 1) + path);
 };
 
 export const getSearch = async (title: string) => {

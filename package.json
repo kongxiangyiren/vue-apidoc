@@ -20,6 +20,7 @@
     "highlightjs-line-numbers2.js": "^3.1.1",
     "jsonsql": "^0.2.5",
     "markdown-it": "^13.0.1",
+    "markdown-it-replace-link": "^1.2.0",
     "markdown-it-tips": "^1.0.3",
     "markdown-it-todo": "^1.0.5",
     "vue": "^3.2.47",
