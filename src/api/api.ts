@@ -21,7 +21,10 @@ export const getAbout = () => {
 
 export const apiList = () => {
   return axios.get(
-    import.meta.env.BASE_URL.slice(0, import.meta.env.BASE_URL.length - 1) + '/api.json'
+    import.meta.env.BASE_URL.slice(0, import.meta.env.BASE_URL.length - 1) +
+      '/api.json' +
+      '?time=' +
+      +new Date()
   );
 };
 
