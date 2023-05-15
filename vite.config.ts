@@ -20,25 +20,25 @@ export default defineConfig(mode => {
         {
           name: 'vue',
           var: 'Vue',
-          path: 'https://unpkg.com/vue@3.2.47/dist/vue.global.prod.js'
+          path: 'https://npm.elemecdn.com/vue@3.2.47/dist/vue.global.prod.js'
         },
 
         // vue-router
         {
           name: 'vue-router',
           var: 'VueRouter',
-          path: 'https://unpkg.com/vue-router@4.1.6/dist/vue-router.global.prod.js'
+          path: 'https://npm.elemecdn.com/vue-router@4.1.6/dist/vue-router.global.prod.js'
         },
         // axios
         {
           name: 'axios',
           var: 'axios',
-          path: 'https://unpkg.com/axios@1.3.6/dist/axios.min.js'
+          path: 'https://npm.elemecdn.com/axios@1.3.6/dist/axios.min.js'
         },
         {
           name: 'markdown-it',
           var: 'markdownit',
-          path: 'https://unpkg.com/markdown-it@13.0.1/dist/markdown-it.min.js'
+          path: 'https://npm.elemecdn.com/markdown-it@13.0.1/dist/markdown-it.min.js'
         },
         {
           name: 'highlight.js',
@@ -49,7 +49,7 @@ export default defineConfig(mode => {
         {
           name: 'clipboard',
           var: 'ClipboardJS',
-          path: 'https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js'
+          path: 'https://npm.elemecdn.com/clipboard@2.0.11/dist/clipboard.min.js'
         }
       ]
     });
@@ -69,7 +69,7 @@ export default defineConfig(mode => {
           data: {
             githubMarkdownCss:
               mode.command === 'build' && env.VITE_APP_CDN === 'true'
-                ? '<link rel="stylesheet" href="https://unpkg.com/github-markdown-css@5.2.0/github-markdown-light.css">'
+                ? '<link rel="stylesheet" href="https://npm.elemecdn.com/github-markdown-css@5.2.0/github-markdown-light.css">'
                 : undefined
           }
         }
