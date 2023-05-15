@@ -43,7 +43,7 @@ export default defineConfig(mode => {
         {
           name: 'highlight.js',
           var: 'hljs',
-          path: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js'
+          path: 'https://lib.baomitu.com/highlight.js/11.7.0/highlight.min.js'
         },
         // clipboard
         {
