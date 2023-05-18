@@ -54,7 +54,7 @@
       return $router.replace('/404');
     }
     if (!import.meta.env.DEV) {
-      const reg = new RegExp('https://api.kongxiangyiren.top', 'g');
+      const reg = new RegExp('https://api.kxyr.top', 'g');
       const data2 = data.replace(reg, location.origin);
       content.value = mdParse(data2);
     } else {

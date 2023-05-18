@@ -1,10 +1,10 @@
-接口地址 `https://api.kongxiangyiren.top/api/weather`
+接口地址 `https://api.kxyr.top/api/weather`
 
 输出类型 `JSON`
 
 请求方式 `GET`
 
-请求示例 `https://api.kongxiangyiren.top/api/weather`
+请求示例 `https://api.kxyr.top/api/weather`
 
 参考：`https://www.sojson.com/blog/305.html`
 

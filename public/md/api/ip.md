@@ -1,10 +1,10 @@
-接口地址 `https://api.kongxiangyiren.top/api/ip`
+接口地址 `https://api.kxyr.top/api/ip`
 
 输出类型 `JSON`
 
 请求方式 `GET`
 
-请求示例 `https://api.kongxiangyiren.top/api/ip?ip=8.8.8.8`
+请求示例 `https://api.kxyr.top/api/ip?ip=8.8.8.8`
 
 ## 请求参数
 
